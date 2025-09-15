@@ -7,3 +7,6 @@
 
 ### Запуск игры brain-calc:
 [![asciicast](https://asciinema.org/a/2UNQkO3OhKT1MDQmX7SiAdmMS.svg)](https://asciinema.org/a/2UNQkO3OhKT1MDQmX7SiAdmMS)
+
+### Запуск игры brain-gcd:
+[![asciicast](https://asciinema.org/a/JfuPVUWVeTyKV9fyhb6RDZRA8.svg)](https://asciinema.org/a/JfuPVUWVeTyKV9fyhb6RDZRA8)
