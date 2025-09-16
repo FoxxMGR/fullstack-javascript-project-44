@@ -10,3 +10,6 @@
 
 ### Запуск игры brain-gcd:
 [![asciicast](https://asciinema.org/a/JfuPVUWVeTyKV9fyhb6RDZRA8.svg)](https://asciinema.org/a/JfuPVUWVeTyKV9fyhb6RDZRA8)
+
+### Запуск игры brain-progression:
+[![asciicast](https://asciinema.org/a/h1yxB0klSQUj6XdmoxHK2TeBM.svg)](https://asciinema.org/a/h1yxB0klSQUj6XdmoxHK2TeBM)
