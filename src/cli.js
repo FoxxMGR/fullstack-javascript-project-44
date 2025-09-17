@@ -4,4 +4,5 @@ const welcomeUser = () => {
   console.log('Hello, ' + name + '!')
   return name
 }
+
 export default welcomeUser
