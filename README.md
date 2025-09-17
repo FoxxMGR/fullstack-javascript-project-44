@@ -13,3 +13,6 @@
 
 ### Запуск игры brain-progression:
 [![asciicast](https://asciinema.org/a/h1yxB0klSQUj6XdmoxHK2TeBM.svg)](https://asciinema.org/a/h1yxB0klSQUj6XdmoxHK2TeBM)
+
+### Запуск игры brain-prime:
+[![asciicast](https://asciinema.org/a/bkE8swQkdPbOwxNV98xKZ5s2A.svg)](https://asciinema.org/a/bkE8swQkdPbOwxNV98xKZ5s2A)

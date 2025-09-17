@@ -3,7 +3,7 @@ import readlineSync from 'readline-sync'
 import welcomeUser from '../src/cli.js'
 console.log('Welcome to the Brain Games!')
 const name = welcomeUser()
-console.log('Answer "yes" if the number is even, otherwise answer "no".')
+console.log('Answer "yes" if given number is prime. Otherwise answer "no".')
 
 let i = 0
 while (i < 3) {
@@ -11,7 +11,18 @@ while (i < 3) {
   console.log('Question:' + randomInt)
   const usersAnswer = readlineSync.question('Your answer: ')
   let rightAnswer
-  if (randomInt % 2 === 0) {
+  function isPrimeSimple(n) { // функция проверки на простоту числа
+    if (n <= 1) return false
+    if (n === 2) return true
+    if (n % 2 === 0) return false
+
+    for (let i = 3; i <= Math.sqrt(n); i += 2) {
+      if (n % i === 0) return false
+    }
+
+    return true
+  }
+  if (isPrimeSimple(randomInt)) {
     rightAnswer = 'yes'
   }
   else {
