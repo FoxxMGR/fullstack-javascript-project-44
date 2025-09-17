@@ -8,7 +8,7 @@ console.log('Answer "yes" if the number is even, otherwise answer "no".')
 let i = 0
 while (i < 3) {
   const randomInt = Math.floor(Math.random() * 100) // генератор чисел
-  console.log('Question:' + randomInt)
+  console.log('Question: ' + randomInt)
   const usersAnswer = readlineSync.question('Your answer: ')
   let rightAnswer
   if (randomInt % 2 === 0) {

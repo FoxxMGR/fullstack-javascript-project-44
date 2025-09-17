@@ -8,7 +8,7 @@ console.log('Answer "yes" if given number is prime. Otherwise answer "no".')
 let i = 0
 while (i < 3) {
   const randomInt = Math.floor(Math.random() * 100) // генератор чисел
-  console.log('Question:' + randomInt)
+  console.log('Question: ' + randomInt)
   const usersAnswer = readlineSync.question('Your answer: ')
   let rightAnswer
   function isPrimeSimple(n) { // функция проверки на простоту числа
