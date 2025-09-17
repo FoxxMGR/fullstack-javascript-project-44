@@ -24,7 +24,7 @@ while (i < 3) {
     i += 1
   }
   else {
-    console.log(usersAnswer + ' is wrong answer ;(. Correct answer was "' + rightAnswer + '".' + '\n' + 'Let\'s try again, ' + name)
+    console.log('"' + usersAnswer + '"' + ' is wrong answer ;(. Correct answer was "' + rightAnswer + '".' + '\n' + 'Let\'s try again, ' + name)
 
     i = 0
   }
