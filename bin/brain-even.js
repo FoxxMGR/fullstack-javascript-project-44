@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync'
 import welcomeUser from '../src/cli.js'
+import process from 'process'
 console.log('Welcome to the Brain Games!')
 const name = welcomeUser()
 console.log('Answer "yes" if the number is even, otherwise answer "no".')
@@ -26,7 +27,7 @@ while (i < 3) {
   else {
     console.log('"' + usersAnswer + '"' + ' is wrong answer ;(. Correct answer was "' + rightAnswer + '".' + '\n' + 'Let\'s try again, ' + name)
 
-    i = 0
+    process.exit(1)
   }
 }
 
