@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync'
 import welcomeUser from '../src/cli.js'
+import process from 'process'
 console.log('Welcome to the Brain Games!')
 const name = welcomeUser()
 console.log('Find the greatest common divisor of given numbers.')
@@ -26,9 +27,9 @@ while (i < 3) {
     i += 1
   }
   else if (usersAnswer != rightAnswer) {
-    console.log(usersAnswer + ' is wrong answer ;(. Correct answer was ' + rightAnswer + '.' + '\n' + 'Let\'s try again, ' + name)
+    console.log(usersAnswer + ' is wrong answer ;(. Correct answer was ' + rightAnswer + '.' + '\n' + 'Let\'s try again, ' + name + '!')
 
-    i = 0
+    process.exit(1)
   }
 }
 

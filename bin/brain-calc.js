@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync'
 import welcomeUser from '../src/cli.js'
+import process from 'process'
 console.log('Welcome to the Brain Games!')
 const name = welcomeUser()
 console.log('What is the result of the expression?')
@@ -11,7 +12,7 @@ while (i < 3) {
   const randomOperation = operations[Math.floor(Math.random() * operations.length)]
   const randomIntA = Math.floor(Math.random() * 100) // генератор чисел
   const randomIntB = Math.floor(Math.random() * 100)
-  console.log('Question: ' + randomIntA + randomOperation + randomIntB)
+  console.log('Question: ' + randomIntA + ' ' + randomOperation + ' ' + randomIntB)
   let rightAnswer
   switch (randomOperation) {
     case '+':
@@ -32,9 +33,9 @@ while (i < 3) {
     i += 1
   }
   else if (usersAnswer != rightAnswer) {
-    console.log(usersAnswer + ' is wrong answer ;(. Correct answer was ' + rightAnswer + '.' + '\n' + 'Let\'s try again, ' + name)
+    console.log(usersAnswer + ' is wrong answer ;(. Correct answer was ' + rightAnswer + '.' + '\n' + 'Let\'s try again, ' + name + '!')
 
-    i = 0
+    process.exit(1)
   }
 }
 
