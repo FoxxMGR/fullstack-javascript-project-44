@@ -1,3 +1,3 @@
-export default function getRule(gameRule) {
-  return gameRule
+export default function getRules(gameRule) {
+  console.log(gameRule)
 }
