@@ -1,15 +1,18 @@
-export function getRule() {
-  return 'Answer "yes" if the number is even, otherwise answer "no".'
-}
-export function evenGame() {
-  const randomInt = Math.floor(Math.random() * 100) // генератор чисел
+import generateRandomNumber from '../utils.js'
+import startGame from '../startGame.js'
 
-  let rightAnswer
-  if (randomInt % 2 === 0) {
-    rightAnswer = 'yes'
+export default function startEvenGame() {
+  const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".'
+  function gameLogic() {
+    const randomInt = generateRandomNumber(100)
+    let rightAnswer
+    if (randomInt % 2 === 0) {
+      rightAnswer = 'yes'
+    }
+    else {
+      rightAnswer = 'no'
+    }
+    return { question: randomInt, rightAnswer }
   }
-  else {
-    rightAnswer = 'no'
-  }
-  return { question: randomInt, rightAnswer }
+  startGame(gameLogic, gameRule)
 }
