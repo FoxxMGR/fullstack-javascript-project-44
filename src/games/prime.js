@@ -1,31 +1,39 @@
 import generateRandomNumber from '../utils.js'
 import startGame from '../startGame.js'
 
-export default function startPrimeGame() {
-  const gameRule = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+const gameRule = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
-  function gameLogic() {
-    const randomInt = generateRandomNumber(100)
+function generateRound() {
+  const randomInt = generateRandomNumber(100)
 
-    let rightAnswer
-    function isPrimeSimple(n) {
-      if (n <= 1) return false
-      if (n === 2) return true
-      if (n % 2 === 0) return false
+  let rightAnswer
 
-      for (let i = 3; i <= Math.sqrt(n); i += 2) {
-        if (n % i === 0) return false
-      }
+  function isPrimeSimple(n) {
+    if (n <= 1) return false
+    if (n === 2) return true
+    if (n % 2 === 0) return false
 
-      return true
+    for (let i = 3; i <= Math.sqrt(n); i += 2) {
+      if (n % i === 0) return false
     }
-    if (isPrimeSimple(randomInt)) {
-      rightAnswer = 'yes'
-    }
-    else {
-      rightAnswer = 'no'
-    }
-    return { question: randomInt, rightAnswer }
+
+    return true
   }
-  startGame(gameLogic, gameRule)
+
+  if (isPrimeSimple(randomInt)) {
+    rightAnswer = 'yes'
+  }
+
+  else {
+    rightAnswer = 'no'
+  }
+
+  return {
+    question: randomInt,
+    rightAnswer,
+  }
+}
+
+export default function startPrimeGame() {
+  startGame(generateRound, gameRule)
 }

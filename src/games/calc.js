@@ -1,27 +1,34 @@
 import generateRandomNumber from '../utils.js'
 import startGame from '../startGame.js'
 
-export default function startCalcGame() {
-  const gameRule = 'What is the result of the expression?'
+const gameRule = 'What is the result of the expression?'
 
-  function gameLogic() {
-    const operations = ['+', '-', '*']
-    const randomOperation = operations[generateRandomNumber(operations.length)]
-    const randomIntA = generateRandomNumber(100)
-    const randomIntB = generateRandomNumber(100)
-    let rightAnswer
-    switch (randomOperation) {
-      case '+':
-        rightAnswer = randomIntA + randomIntB
-        break
-      case '-':
-        rightAnswer = randomIntA - randomIntB
-        break
-      case '*':
-        rightAnswer = randomIntA * randomIntB
-        break
-    }
-    return { question: randomIntA + ' ' + randomOperation + ' ' + randomIntB, rightAnswer }
+function generateRound() {
+  const operations = ['+', '-', '*']
+  const randomOperation = operations[generateRandomNumber(operations.length)]
+  const randomIntA = generateRandomNumber(100)
+  const randomIntB = generateRandomNumber(100)
+
+  let rightAnswer
+
+  switch (randomOperation) {
+    case '+':
+      rightAnswer = randomIntA + randomIntB
+      break
+    case '-':
+      rightAnswer = randomIntA - randomIntB
+      break
+    case '*':
+      rightAnswer = randomIntA * randomIntB
+      break
   }
-  startGame (gameLogic, gameRule)
+
+  return {
+    question: `${randomIntA} ${randomOperation} ${randomIntB}`,
+    rightAnswer,
+  }
+}
+
+export default function startCalcGame() {
+  startGame (generateRound, gameRule)
 }
